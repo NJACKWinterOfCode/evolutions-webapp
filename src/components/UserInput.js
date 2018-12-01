@@ -159,13 +159,25 @@ class UserInput extends React.Component {
           title="Evolutions"
         >
           <div>{this.state.result}</div>
-          {this.state.pokemons.map((pokemon, index) => (
-            <PokemonSprite
-              pokemon={pokemon}
-              info={BattlePokedex[pokemon]}
-              key={BattlePokedex[pokemon].num + index}
-            />
-          ))}
+          {this.state.pokemons.length > 1 ? (
+            this.state.pokemons.map((pokemon, index) => (
+              <PokemonSprite
+                pokemon={pokemon}
+                info={BattlePokedex[pokemon]}
+                key={BattlePokedex[pokemon].num + index}
+              />
+            ))
+          ) : (
+            <div
+              style={{
+                marginTop: 100,
+                fontSize: 22,
+                fontWeight: 500,
+              }}
+            >
+              Pokemon Not found!
+            </div>
+          )}
         </SkyLight>
       </div>
     );
