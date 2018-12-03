@@ -159,7 +159,7 @@ class UserInput extends React.Component {
           title="Evolutions"
         >
           <div>{this.state.result}</div>
-          {this.state.pokemons.length > 1 ? (
+          {this.state.pokemons.length > 2 ? (
             this.state.pokemons.map((pokemon, index) => (
               <PokemonSprite
                 pokemon={pokemon}
