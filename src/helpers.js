@@ -10,6 +10,20 @@ export function lower(str) {
       .join('');
   }
 }
+/**
+ * @desc only show the pokemons where they have
+ * either evolution(evos) or previous evolution(prevo) present
+ */
+export function getFilteredPokemons() {
+  const filteredPokemons = {};
+  for (const pokemon in BattlePokedex) {
+    if (BattlePokedex[pokemon].evos || BattlePokedex[pokemon].prevo) {
+      filteredPokemons[pokemon] = BattlePokedex[pokemon];
+    }
+  }
+
+  return Object.keys(filteredPokemons);
+}
 
 export function isNum(val) {
   return /^\d+$/.test(val);

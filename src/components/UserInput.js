@@ -1,7 +1,7 @@
 import React from 'react';
 import Autocomplete from 'react-autocomplete';
-import { getPokemonInheritance } from '../helpers';
-import { BattlePokedex, BattlePokedexKeys } from '../pokedex';
+import { getPokemonInheritance, getFilteredPokemons } from '../helpers';
+import { BattlePokedex } from '../pokedex';
 import SkyLight from 'react-skylight';
 import FeelingHype from './FeelingHype';
 import PokemonSprite from './pokemonSprite/PokemonSprite';
@@ -77,7 +77,7 @@ class UserInput extends React.Component {
             <div className="App-search_bar">
               <Autocomplete
                 getItemValue={p => p}
-                items={BattlePokedexKeys}
+                items={getFilteredPokemons()}
                 ref={input => {
                   this.input = input;
                 }}
